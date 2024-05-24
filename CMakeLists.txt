@@ -5,24 +5,21 @@ project(mytemplateproject)
 # Set C standard
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_STANDARD_REQUIRED ON)
+set(CMAKE_EXPORT_COMPILE_COMMAND ON)
 
-#Enable testing
-enable_testing()
+
 
 # Unity Test Framework
  include(FetchContent)
  set(UNITY_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/external/Unity" CACHE PATH "Path to Unity source directory")
- FetchContent_Declare(
- unity
- GIT_REPOSITORY https://github.com/ThrowTheSwitch/Unity.git
- GIT_TAG v2.5.2
- SOURCE_DIR "${UNITY_SOURCE_DIR}"
- )
- FetchContent_MakeAvailable(unity)
 
+#Enable testing
+enable_testing()
 
 # Add subdirectories
+add_subdirectory(${UNITY_SOURCE_DIR})
 add_subdirectory(src)
+
 
 
 

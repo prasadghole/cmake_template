@@ -11,7 +11,7 @@
 
 uint32_t print_usage()
 {
-	printf("I am driver %s \n", __FILE__);
+	return printf("I am driver %s \n", __FILE__);
 }
 
 
